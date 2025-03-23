@@ -10,7 +10,7 @@ namespace szegedGUI
 {
     internal class Adatbazis
     {
-        const string szerver = "server=localhost;database=sys;uid=root;password=KawailHB1.";
+        const string szerver = "server=localhost;database=sys;uid=root;password=asd123";
         MySqlConnection kapcsolat;
         MySqlCommand parancs;
         MySqlDataReader dr;
