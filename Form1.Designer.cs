@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbmegallok = new System.Windows.Forms.Label();
             this.dgadatok = new System.Windows.Forms.DataGridView();
             this.jaratszam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nev = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,7 +37,7 @@
             this.jarat_tipus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txserach = new System.Windows.Forms.TextBox();
-            this.lbmegallok = new System.Windows.Forms.Label();
+            this.rtbjaratok = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgadatok)).BeginInit();
             this.SuspendLayout();
@@ -44,11 +45,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumOrchid;
+            this.panel1.Controls.Add(this.rtbjaratok);
             this.panel1.Controls.Add(this.lbmegallok);
             this.panel1.Location = new System.Drawing.Point(12, 338);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(947, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // lbmegallok
+            // 
+            this.lbmegallok.AutoSize = true;
+            this.lbmegallok.ForeColor = System.Drawing.Color.Yellow;
+            this.lbmegallok.Location = new System.Drawing.Point(42, 49);
+            this.lbmegallok.Name = "lbmegallok";
+            this.lbmegallok.Size = new System.Drawing.Size(105, 13);
+            this.lbmegallok.TabIndex = 0;
+            this.lbmegallok.Text = "A megálló járatai:";
             // 
             // dgadatok
             // 
@@ -109,15 +121,14 @@
             this.txserach.TabIndex = 3;
             this.txserach.TextChanged += new System.EventHandler(this.txserach_TextChanged);
             // 
-            // lbmegallok
+            // rtbjaratok
             // 
-            this.lbmegallok.AutoSize = true;
-            this.lbmegallok.ForeColor = System.Drawing.Color.Yellow;
-            this.lbmegallok.Location = new System.Drawing.Point(42, 49);
-            this.lbmegallok.Name = "lbmegallok";
-            this.lbmegallok.Size = new System.Drawing.Size(105, 13);
-            this.lbmegallok.TabIndex = 0;
-            this.lbmegallok.Text = "A megálló járatai:";
+            this.rtbjaratok.BackColor = System.Drawing.Color.MediumOrchid;
+            this.rtbjaratok.Location = new System.Drawing.Point(167, 32);
+            this.rtbjaratok.Name = "rtbjaratok";
+            this.rtbjaratok.Size = new System.Drawing.Size(764, 51);
+            this.rtbjaratok.TabIndex = 1;
+            this.rtbjaratok.Text = "";
             // 
             // Form1
             // 
@@ -155,6 +166,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txserach;
         private System.Windows.Forms.Label lbmegallok;
+        private System.Windows.Forms.RichTextBox rtbjaratok;
     }
 }
 

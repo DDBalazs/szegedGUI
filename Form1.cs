@@ -53,7 +53,6 @@ namespace szegedGUI
         private void Form1_Load(object sender, EventArgs e)
         {
             betoltes();
-            lbmegallok.Visible = false;
         }
 
         private void txserach_TextChanged(object sender, EventArgs e)
@@ -63,14 +62,19 @@ namespace szegedGUI
 
         private void dgadatok_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            lbmegallok.Visible = true;
+
             DataGridViewRow sor = dgadatok.Rows[e.RowIndex];
-            string megalloleker = sor.Cells["nev"].Value.ToString();
-            string lekerdezes = "select jaratszam from jaratok, megallo where jaratok.id = utvonal.jarat_id and utvonal.megallo_id = megallo.id '"+megalloleker+"'";
+            string bekert = sor.Cells["nev"].Value.ToString();
+            List<string> list = new List<string>();
+            string lekerdezes = "select jaratszam from jaratok, megallo, utvonal where jaratok.id = utvonal.jarat_id and utvonal.megallo_id = megallo.id and nev like '"+bekert+"'";
             Adatbazis ab = new Adatbazis(lekerdezes);
             while (ab.Dr.Read())
             {
-                lbmegallok.Text = "A megálló járatai: '" + ab.Dr["jaratszam"] +"'";
+                list.Add(ab.Dr["jaratszam"].ToString());
+                for(int i = 0; i < list.Count; i++)
+                {
+                    rtbjaratok.Text = list[i].ToString();
+                }
             }
                 
         }
